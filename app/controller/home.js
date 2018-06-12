@@ -7,11 +7,16 @@ class HomeController extends Controller {
 		this.ctx.body = 'hi, egg';
 	}
 	async test() {
-		var result = await this.ctx.app.mysql.query('select * from pte_id_ref');
+		var mysqlValue = await this.ctx.app.mysql.query('select * from pte_id_ref');
 		//this.ctx.body = result;
 		
+		await this.ctx.app.redis.set('username', 'sun');
+		var redisValue = await this.ctx.app.redis.get('username');
+		
+		
 		await this.ctx.render('test', {
-			data: result
+			mysqlValue: mysqlValue,
+			redisValue: redisValue
 		});
 	}
 }

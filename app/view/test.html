@@ -5,8 +5,11 @@
 	}
 </style>
 
-<h3>eggjs</h3>
-
-{% for item in data %}
+<h3>mysqlValue</h3>
+{% for item in mysqlValue %}
 <pre>{{item.ID}}	{{item.slack_id}}	{{item.pte_id}}</pre>
 {% endfor %}
+
+
+<h3>redisValue</h3>
+<div>{{redisValue}}</div>

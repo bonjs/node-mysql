@@ -13,7 +13,7 @@ module.exports = appInfo => {
 		// database configuration
 		client : {
 			// host
-			host : 'tc.bonjs.com',
+			host : 'localhost',
 			// port
 			port : '3306',
 			// username
@@ -28,7 +28,16 @@ module.exports = appInfo => {
 		// load into agent, default is close
 		agent : false,
 	};
-
+	
+	config.redis = {
+		client : {
+			port : 6379, // Redis port
+			host : 'localhost', // Redis host
+			password : '123456',
+			db : 0,
+		},
+	};
+	
 	exports.view = {
 		defaultExtension: '.html',
 		defaultViewEngine: 'nunjucks',

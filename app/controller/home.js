@@ -8,7 +8,11 @@ class HomeController extends Controller {
 	}
 	async test() {
 		var result = await this.ctx.app.mysql.query('select * from pte_id_ref');
-		this.ctx.body = result;
+		//this.ctx.body = result;
+		
+		await this.ctx.render('test', {
+			data: result
+		});
 	}
 }
 

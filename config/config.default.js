@@ -29,6 +29,14 @@ module.exports = appInfo => {
 		agent : false,
 	};
 	
+
+	config.slack = {
+		APPID : 'AB5T5KL1E',
+		ClientID : '2842760333.379923666048',
+		ClientSecret : '4a11003d78878f74a62d5ffbdeddb9f1',
+		VerificationToken : 'LFJVyncDwbYwo7Kj4KFTnTux'
+	};
+	
 	config.redis = {
 		client : {
 			port : 6379, // Redis port
@@ -37,6 +45,12 @@ module.exports = appInfo => {
 			db : 0,
 		},
 	};
+	
+	config.security = {
+		csrf: {
+			enable: false
+		}
+	}
 	
 	exports.view = {
 		defaultExtension: '.html',
